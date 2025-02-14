@@ -1,1 +1,29 @@
-"" 
+name: Windows CI for Guess the Name
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  build:
+    runs-on: windows-latest  
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.0.x  # ✅ Updated to match your project
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build Windows Forms project
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Run unit tests (if available)
+        run: dotnet test --no-restore --verbosity normal
