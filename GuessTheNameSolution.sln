@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessTheNameClient", "Guess
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessTheNameServer", "GuessTheNameServer\GuessTheNameServer.csproj", "{2F021061-AFA9-4537-889E-C3A6D442B2E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{FF350A01-4E31-4983-AA11-189A2096DE5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,8 +43,23 @@ Global
 		{2F021061-AFA9-4537-889E-C3A6D442B2E2}.Release|x64.Build.0 = Release|Any CPU
 		{2F021061-AFA9-4537-889E-C3A6D442B2E2}.Release|x86.ActiveCfg = Release|Any CPU
 		{2F021061-AFA9-4537-889E-C3A6D442B2E2}.Release|x86.Build.0 = Release|Any CPU
+		{FF350A01-4E31-4983-AA11-189A2096DE5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF350A01-4E31-4983-AA11-189A2096DE5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF350A01-4E31-4983-AA11-189A2096DE5B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FF350A01-4E31-4983-AA11-189A2096DE5B}.Debug|x64.Build.0 = Debug|Any CPU
+		{FF350A01-4E31-4983-AA11-189A2096DE5B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FF350A01-4E31-4983-AA11-189A2096DE5B}.Debug|x86.Build.0 = Debug|Any CPU
+		{FF350A01-4E31-4983-AA11-189A2096DE5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF350A01-4E31-4983-AA11-189A2096DE5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF350A01-4E31-4983-AA11-189A2096DE5B}.Release|x64.ActiveCfg = Release|Any CPU
+		{FF350A01-4E31-4983-AA11-189A2096DE5B}.Release|x64.Build.0 = Release|Any CPU
+		{FF350A01-4E31-4983-AA11-189A2096DE5B}.Release|x86.ActiveCfg = Release|Any CPU
+		{FF350A01-4E31-4983-AA11-189A2096DE5B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF2EC516-78D2-47CB-8FBB-1C0455DF5250}
 	EndGlobalSection
 EndGlobal
