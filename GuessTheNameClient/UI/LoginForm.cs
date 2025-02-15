@@ -2,17 +2,18 @@
 using System.Drawing;
 using System.Windows.Forms;
 using GuessTheNameClient.ClientCore;
+using GuessTheNameClient.Networking;
 
 namespace GuessTheNameClient.UI
 {
     public partial class LoginForm : Form
     {
         private readonly GameClient _client = new();
-        private Button? button1; // Mark as nullable
+        private Button? button1;
+        private Button? btnTestSerialization;
 
         public LoginForm()
         {
-            InitializeComponent(); // 1. Call designer initialization first
             InitializeCustomComponents();
             MessageBox.Show("Welcome to Guess The Name!", "Welcome",
                           MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -20,35 +21,52 @@ namespace GuessTheNameClient.UI
 
         private void InitializeCustomComponents()
         {
-            // Configure form (complementary to designer settings)
+            // Configure form
             this.Text = "Server Connection Test";
             this.ClientSize = new Size(300, 200);
             this.StartPosition = FormStartPosition.CenterScreen;
+
+            // Test Connection Button
+            button1 = new Button
+            {
+                Text = "Test Connection",
+                Location = new Point(80, 60),
+                Size = new Size(120, 40)
+            };
+            button1.Click += button1_Click;
+            this.Controls.Add(button1);
+
+            // Test Serialization Button
+            btnTestSerialization = new Button
+            {
+                Text = "Test Serialization",
+                Location = new Point(80, 120),
+                Size = new Size(120, 40)
+            };
+            btnTestSerialization.Click += BtnTestSerialization_Click;
+            this.Controls.Add(btnTestSerialization);
         }
 
-        //private void InitializeComponent()
-        //{
-        //    // Designer-generated code
-        //    this.button1 = new Button();
-        //    this.SuspendLayout();
-        //    // 
-        //    // button1
-        //    // 
-        //    this.button1.Location = new Point(80, 60);
-        //    this.button1.Name = "button1";
-        //    this.button1.Size = new Size(120, 40);
-        //    this.button1.TabIndex = 0;
-        //    this.button1.Text = "Test Connection";
-        //    this.button1.UseVisualStyleBackColor = true;
-        //    this.button1.Click += this.button1_Click;
-        //    // 
-        //    // LoginForm
-        //    // 
-        //    this.ClientSize = new Size(300, 200);
-        //    this.Controls.Add(this.button1);
-        //    this.Name = "LoginForm";
-        //    this.ResumeLayout(false);
-        //}
+        private async void BtnTestSerialization_Click(object? sender, EventArgs? e)
+        {
+            try
+            {
+                if (_client.IsConnected && _client.Network != null)
+                {
+                    await _client.Network.TestSerializationAsync();
+                }
+                else
+                {
+                    MessageBox.Show("Connect to server first!", "Error",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Serialization Test Failed: {ex.Message}",
+                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private async void button1_Click(object? sender, EventArgs? e)
         {

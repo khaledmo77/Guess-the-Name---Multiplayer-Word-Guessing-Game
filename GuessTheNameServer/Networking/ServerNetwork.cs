@@ -40,9 +40,21 @@ namespace GuessTheNameServer.Networking
                     if (string.IsNullOrEmpty(message)) continue;
 
                     var command = JsonConvert.DeserializeObject<GameCommand>(message);
-                    if (command != null)
+                    if (command?.Action == "TEST_SERIALIZATION")
                     {
-                        _roomManager.ProcessCommand(player, command);
+                        // Log received command
+                        Logger.Log($"[TEST] Received: {command.Data}");
+
+                        if (player.Writer != null)
+                        {
+                            var response = new GameCommand
+                            {
+                                Action = "TEST_RESPONSE",
+                                Data = $"Received: {command.Data}"
+                            };
+                            await player.Writer.WriteLineAsync(JsonConvert.SerializeObject(response));
+                            await player.Writer.FlushAsync();
+                        }
                     }
                 }
             }
@@ -52,7 +64,7 @@ namespace GuessTheNameServer.Networking
             }
             finally
             {
-                Logger.Log($"Client  disconnected");
+                Logger.Log($"Client disconnected: {client.Client.RemoteEndPoint}");
             }
         }
     }
