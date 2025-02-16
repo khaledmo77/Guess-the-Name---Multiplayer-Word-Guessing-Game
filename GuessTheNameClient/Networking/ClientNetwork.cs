@@ -12,6 +12,28 @@ namespace GuessTheNameClient.Networking
 
         public bool IsConnected => _client?.Connected == true && _writer != null;
 
+        public async Task TestSerializationAsync()
+        {
+            if (!IsConnected)
+                throw new InvalidOperationException("Not connected to server");
+
+            try
+            {
+                var testCommand = new GameCommand
+                {
+                    Action = "TEST_SERIALIZATION",
+                    Data = "Hello Server!"
+                };
+
+                await _writer!.WriteLineAsync(JsonConvert.SerializeObject(testCommand));
+                await _writer.FlushAsync();
+            }
+            catch
+            {
+                throw new InvalidOperationException("Failed to send test command");
+            }
+        }
+
         public async Task ConnectAsync(string ip, int port = 8888)
         {
             try
