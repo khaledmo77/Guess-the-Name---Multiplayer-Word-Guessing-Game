@@ -1,6 +1,8 @@
+
 ﻿using GuessTheNameServer.Utilities;
 using Newtonsoft.Json;
 using Shared.ProtocolModels;
+
 
 namespace GuessTheNameServer.ServerCore
 {
@@ -16,6 +18,7 @@ namespace GuessTheNameServer.ServerCore
                 // Add player to available room or create new
             }
         }
+
         private void SendToPlayer(Player player, GameCommand command)
         {
             try
@@ -32,10 +35,12 @@ namespace GuessTheNameServer.ServerCore
             }
         }
 
+
         // In GuessTheNameServer/ServerCore/RoomManager.cs
         public void ProcessCommand(Player player, GameCommand? command)
         {
             if (command == null) return;
+
             if (command.Action == "TEST_SERIALIZATION")
             {
                 Logger.Log($"Received test data: {command.Data}");
@@ -51,6 +56,7 @@ namespace GuessTheNameServer.ServerCore
                         Data = $"Echo: {command.Data}"
                     });
                     break;
+
                 case "CREATE_ROOM":
                     if (!string.IsNullOrEmpty(command.Data))
                         CreateRoom(player, command.Data);

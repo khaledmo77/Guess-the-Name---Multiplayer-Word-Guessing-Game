@@ -2,18 +2,22 @@
 using System.Drawing;
 using System.Windows.Forms;
 using GuessTheNameClient.ClientCore;
+
 using GuessTheNameClient.Networking;
+
 
 namespace GuessTheNameClient.UI
 {
     public partial class LoginForm : Form
     {
         private readonly GameClient _client = new();
+
         private Button? button1;
         private Button? btnTestSerialization;
 
         public LoginForm()
         {
+
             InitializeCustomComponents();
             MessageBox.Show("Welcome to Guess The Name!", "Welcome",
                           MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -21,6 +25,7 @@ namespace GuessTheNameClient.UI
 
         private void InitializeCustomComponents()
         {
+
             // Configure form
             this.Text = "Server Connection Test";
             this.ClientSize = new Size(300, 200);
@@ -67,6 +72,7 @@ namespace GuessTheNameClient.UI
                               "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private async void button1_Click(object? sender, EventArgs? e)
         {

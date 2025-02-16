@@ -40,6 +40,7 @@ namespace GuessTheNameServer.Networking
                     if (string.IsNullOrEmpty(message)) continue;
 
                     var command = JsonConvert.DeserializeObject<GameCommand>(message);
+
                     if (command?.Action == "TEST_SERIALIZATION")
                     {
                         // Log received command
@@ -55,6 +56,7 @@ namespace GuessTheNameServer.Networking
                             await player.Writer.WriteLineAsync(JsonConvert.SerializeObject(response));
                             await player.Writer.FlushAsync();
                         }
+
                     }
                 }
             }
@@ -64,7 +66,9 @@ namespace GuessTheNameServer.Networking
             }
             finally
             {
+
                 Logger.Log($"Client disconnected: {client.Client.RemoteEndPoint}");
+
             }
         }
     }

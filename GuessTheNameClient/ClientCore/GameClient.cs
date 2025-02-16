@@ -8,8 +8,10 @@ namespace GuessTheNameClient.ClientCore
         private readonly ClientNetwork _network = new();
 
         // Expose the network's connection state
+
         public ClientNetwork Network => _network;
         public bool IsConnected => _network?.IsConnected ?? false;
+
 
         public async Task Connect(string ip, int port)
         {
