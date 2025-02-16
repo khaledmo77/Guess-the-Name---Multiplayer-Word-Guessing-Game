@@ -9,16 +9,22 @@ namespace GuessTheNameClient.ClientCore
 
         // Expose the network's connection state
 <<<<<<< HEAD
+<<<<<<< HEAD
         public ClientNetwork Network => _network;
         public bool IsConnected => _network?.IsConnected ?? false;
 
 =======
+=======
+>>>>>>> 405cf6c7783d56e19bb324c14c224a4283a0d1c2
 
         public ClientNetwork Network => _network;
         public bool IsConnected => _network?.IsConnected ?? false;
 
 
+<<<<<<< HEAD
 >>>>>>> 83cfaf253fc697a51ae00ec4b583e8176d14411f
+=======
+>>>>>>> 405cf6c7783d56e19bb324c14c224a4283a0d1c2
         public async Task Connect(string ip, int port)
         {
             if (!IsConnected)

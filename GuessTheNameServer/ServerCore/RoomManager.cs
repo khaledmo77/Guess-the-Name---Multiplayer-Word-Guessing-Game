@@ -1,15 +1,23 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 83cfaf253fc697a51ae00ec4b583e8176d14411f
+=======
+
+>>>>>>> 405cf6c7783d56e19bb324c14c224a4283a0d1c2
 ﻿using GuessTheNameServer.Utilities;
 using Newtonsoft.Json;
 using Shared.ProtocolModels;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 83cfaf253fc697a51ae00ec4b583e8176d14411f
+=======
+
+>>>>>>> 405cf6c7783d56e19bb324c14c224a4283a0d1c2
 namespace GuessTheNameServer.ServerCore
 {
     public class RoomManager
@@ -25,9 +33,13 @@ namespace GuessTheNameServer.ServerCore
             }
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 83cfaf253fc697a51ae00ec4b583e8176d14411f
+=======
+
+>>>>>>> 405cf6c7783d56e19bb324c14c224a4283a0d1c2
         private void SendToPlayer(Player player, GameCommand command)
         {
             try
@@ -45,17 +57,25 @@ namespace GuessTheNameServer.ServerCore
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 83cfaf253fc697a51ae00ec4b583e8176d14411f
+=======
+
+>>>>>>> 405cf6c7783d56e19bb324c14c224a4283a0d1c2
         // In GuessTheNameServer/ServerCore/RoomManager.cs
         public void ProcessCommand(Player player, GameCommand? command)
         {
             if (command == null) return;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 83cfaf253fc697a51ae00ec4b583e8176d14411f
+=======
+
+>>>>>>> 405cf6c7783d56e19bb324c14c224a4283a0d1c2
             if (command.Action == "TEST_SERIALIZATION")
             {
                 Logger.Log($"Received test data: {command.Data}");
@@ -72,9 +92,13 @@ namespace GuessTheNameServer.ServerCore
                     });
                     break;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 83cfaf253fc697a51ae00ec4b583e8176d14411f
+=======
+
+>>>>>>> 405cf6c7783d56e19bb324c14c224a4283a0d1c2
                 case "CREATE_ROOM":
                     if (!string.IsNullOrEmpty(command.Data))
                         CreateRoom(player, command.Data);
