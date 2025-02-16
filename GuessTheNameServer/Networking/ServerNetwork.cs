@@ -40,14 +40,7 @@ namespace GuessTheNameServer.Networking
                     if (string.IsNullOrEmpty(message)) continue;
 
                     var command = JsonConvert.DeserializeObject<GameCommand>(message);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 83cfaf253fc697a51ae00ec4b583e8176d14411f
-=======
-
->>>>>>> 405cf6c7783d56e19bb324c14c224a4283a0d1c2
                     if (command?.Action == "TEST_SERIALIZATION")
                     {
                         // Log received command
@@ -63,14 +56,7 @@ namespace GuessTheNameServer.Networking
                             await player.Writer.WriteLineAsync(JsonConvert.SerializeObject(response));
                             await player.Writer.FlushAsync();
                         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 83cfaf253fc697a51ae00ec4b583e8176d14411f
-=======
-
->>>>>>> 405cf6c7783d56e19bb324c14c224a4283a0d1c2
                     }
                 }
             }
@@ -80,19 +66,11 @@ namespace GuessTheNameServer.Networking
             }
             finally
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                Logger.Log($"Client disconnected: {client.Client.RemoteEndPoint}");
-=======
 
                 Logger.Log($"Client disconnected: {client.Client.RemoteEndPoint}");
 
->>>>>>> 83cfaf253fc697a51ae00ec4b583e8176d14411f
-=======
 
-                Logger.Log($"Client disconnected: {client.Client.RemoteEndPoint}");
 
->>>>>>> 405cf6c7783d56e19bb324c14c224a4283a0d1c2
             }
         }
     }
