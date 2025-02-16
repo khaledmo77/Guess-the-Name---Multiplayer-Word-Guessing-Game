@@ -6,11 +6,14 @@ using GuessTheNameClient.ClientCore;
 using GuessTheNameClient.Networking;
 
 
+
 namespace GuessTheNameClient.UI
 {
     public partial class LoginForm : Form
     {
         private readonly GameClient _client = new();
+
+
 
         private Button? button1;
         private Button? btnTestSerialization;

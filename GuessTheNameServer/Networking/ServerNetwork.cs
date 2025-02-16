@@ -69,6 +69,8 @@ namespace GuessTheNameServer.Networking
 
                 Logger.Log($"Client disconnected: {client.Client.RemoteEndPoint}");
 
+
+
             }
         }
     }
