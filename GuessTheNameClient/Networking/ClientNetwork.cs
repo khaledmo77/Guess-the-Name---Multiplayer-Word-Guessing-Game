@@ -11,6 +11,10 @@ namespace GuessTheNameClient.Networking
         private StreamWriter? _writer;
 
         public bool IsConnected => _client?.Connected == true && _writer != null;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 83cfaf253fc697a51ae00ec4b583e8176d14411f
         public async Task TestSerializationAsync()
         {
             if (!IsConnected)
@@ -32,6 +36,10 @@ namespace GuessTheNameClient.Networking
                 throw new InvalidOperationException("Failed to send test command");
             }
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 83cfaf253fc697a51ae00ec4b583e8176d14411f
         public async Task ConnectAsync(string ip, int port = 8888)
         {
             try
