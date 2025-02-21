@@ -30,8 +30,8 @@ namespace GuessTheNameClient.UI
             DialogResult result = newRoomDialog.ShowDialog();
             if (result == DialogResult.OK)
             {
-                roomNames.Add(newRoomDialog.newRoom);
-                createRoom(newRoomDialog.newRoom, roomNames.Count);
+             //   roomNames.Add(newRoomDialog.newRoom);
+               // createRoom(newRoomDialog.newRoom, roomNames.Count);
                 Invalidate();
 
             }

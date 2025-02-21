@@ -12,7 +12,7 @@ namespace GuessTheNameClient.UI
 {
     public partial class addRoom : Form
     {
-        public string newRoom { get; private set; }
+      //  public string newRoom { get; private set; }
         public addRoom()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace GuessTheNameClient.UI
 
         private void confirmNewRoomName_Click(object sender, EventArgs e)
         {
-            this.newRoom = newRoomName.Text;
+       //     this.newRoom = newRoomName.Text;
             this.DialogResult = DialogResult.OK;
             this.Close();
 
