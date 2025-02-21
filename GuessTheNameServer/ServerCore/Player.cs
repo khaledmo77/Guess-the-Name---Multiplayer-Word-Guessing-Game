@@ -9,6 +9,7 @@ namespace GuessTheNameServer.ServerCore
         public StreamWriter Writer { get; }
         public StreamReader Reader { get; }
         private bool _disposed = false;
+        //bool inGame = false;  
 
         public Player(TcpClient client)
         {

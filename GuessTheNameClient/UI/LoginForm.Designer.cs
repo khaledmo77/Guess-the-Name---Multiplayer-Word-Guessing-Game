@@ -28,30 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
-            // Designer-generated code
-            this.button1 = new Button();
-            this.SuspendLayout();
+            button1 = new Button();
+            SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new Point(80, 60);
-            this.button1.Name = "button1";
-            this.button1.Size = new Size(120, 40);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Test Connection";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += this.button1_Click;
+            button1.Location = new Point(80, 60);
+            button1.Name = "button1";
+            button1.Size = new Size(120, 40);
+            button1.TabIndex = 0;
+            button1.Text = "Test Connection";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // LoginForm
             // 
-            this.ClientSize = new Size(300, 200);
-            this.Controls.Add(this.button1);
-            this.Name = "LoginForm";
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(300, 200);
+            Controls.Add(button1);
+            Name = "LoginForm";
+            Text = "Form1";
+            Load += LoginForm_Load;
+            ResumeLayout(false);
         }
 
         #endregion
