@@ -8,5 +8,6 @@ namespace GuessTheNameClient.UI
 {
     class LobbyForm
     {
+
     }
 }
