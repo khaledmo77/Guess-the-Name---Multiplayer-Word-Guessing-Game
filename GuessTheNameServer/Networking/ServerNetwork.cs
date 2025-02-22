@@ -1,5 +1,6 @@
 using System.Net;
 using System.Net.Sockets;
+using System.Xml.Linq;
 using GuessTheNameServer.ServerCore;
 using GuessTheNameServer.Utilities;
 using Newtonsoft.Json;
@@ -24,9 +25,10 @@ namespace GuessTheNameServer.Networking
             while (true)
             {
                 var client = _listener.AcceptTcpClient();
-                Thread t = new Thread(()=> Task.Run(() => HandleClient(client)));
+                Thread t = new Thread(() => Task.Run(() => HandleClient(client)));
                 t.Start();
             }
+
         }
 
         private async Task HandleClient(TcpClient client)
@@ -40,23 +42,44 @@ namespace GuessTheNameServer.Networking
                     if (string.IsNullOrEmpty(message)) continue;
 
                     var command = JsonConvert.DeserializeObject<GameCommand>(message);
+                    if (command == null) continue;
 
-                    if (command?.Action == "TEST_SERIALIZATION")
+                    
+                    switch (command.Action)
                     {
-                        // Log received command
-                        Logger.Log($"[TEST] Received: {command.Data}");
+                        case "LOGIN":
+                            _roomManager.Login(player, command.Data);
+                            break;
 
-                        if (player.Writer != null)
-                        {
-                            var response = new GameCommand
+                        case "CREATE_ROOM":
+                            if (!string.IsNullOrEmpty(command.Data))
                             {
-                                Action = "TEST_RESPONSE",
-                                Data = $"Received: {command.Data}"
-                            };
-                            await player.Writer.WriteLineAsync(JsonConvert.SerializeObject(response));
-                            await player.Writer.FlushAsync();
-                        }
+                                _roomManager.CreateRoom(player, command.Data);
+                            }
+                            break;
+                        case "JOIN_ROOM":
+                            if (!string.IsNullOrEmpty(command.Data))
+                            {
 
+                            }
+                            break;
+                        case "GUESS":
+                            if (!string.IsNullOrEmpty(command.Data))
+                            {
+                                _roomManager.CreateRoom(player, "Animals");
+                                player.SendGuess(command.Data);
+                            }
+                            break;
+                        case "WATCH":
+                            if (!string.IsNullOrEmpty(command.Data))
+                            {
+                                int index = Convert.ToInt32(command.Data);
+                                _roomManager.Watch(player, index);
+                                player.SendGuess(command.Data);
+                            }
+                            break;
+
+                            // Add other commands
                     }
                 }
             }
