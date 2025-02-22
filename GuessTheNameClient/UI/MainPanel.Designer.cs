@@ -1,6 +1,6 @@
 ﻿namespace GuessTheNameClient.UI
 {
-    partial class LoginForm
+    partial class MainPanel
     {
         /// <summary>
         /// Required designer variable.
@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            LoginPanel = new Panel();
             SuspendLayout();
             // 
-            // button1
+            // LoginPanel
             // 
-            button1.Location = new Point(80, 60);
-            button1.Name = "button1";
-            button1.Size = new Size(120, 40);
-            button1.TabIndex = 0;
-            button1.Text = "Test Connection";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            LoginPanel.Location = new Point(1, 1);
+            LoginPanel.Name = "LoginPanel";
+            LoginPanel.Size = new Size(1072, 655);
+            LoginPanel.TabIndex = 0;
             // 
-            // LoginForm
+            // MainPanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(300, 200);
-            Controls.Add(button1);
-            Name = "LoginForm";
-            Text = "Form1";
-            Load += LoginForm_Load;
+            ClientSize = new Size(1065, 610);
+            Controls.Add(LoginPanel);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "MainPanel";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "MainPanel";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Panel LoginPanel;
     }
 }
