@@ -6,7 +6,7 @@ namespace GuessTheNameServer.ServerCore
     public class GameServer
     {
         private readonly ServerNetwork _network;
-        private readonly RoomManager _roomManager = new();
+        private static readonly RoomManager _roomManager = new();
 
         public GameServer() =>
             _network = new ServerNetwork(Config.Port, _roomManager);
