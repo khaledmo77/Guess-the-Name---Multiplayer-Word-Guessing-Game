@@ -17,9 +17,12 @@ namespace Shared.ProtocolModels
     public class GameState
     {
         [JsonProperty("revealed")]
-        public char[] RevealedLetters { get; set; } = null!;
+        public List<char> RevealedLetters { get; set; } = null!;
 
         [JsonProperty("currentPlayer")]
         public string CurrentPlayer { get; set; } = null!;
+
+        [JsonProperty("state")]
+        public string State { get; set; } = null!;
     }
 }

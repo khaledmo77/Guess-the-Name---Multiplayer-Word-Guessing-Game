@@ -1,5 +1,6 @@
 
-﻿using GuessTheNameServer.Utilities;
+using System.ComponentModel;
+using GuessTheNameServer.Utilities;
 using Newtonsoft.Json;
 using Shared.ProtocolModels;
 
@@ -37,46 +38,48 @@ namespace GuessTheNameServer.ServerCore
 
 
         // In GuessTheNameServer/ServerCore/RoomManager.cs
-        public void ProcessCommand(Player player, GameCommand? command)
+
+        public void Login(Player player, string name)
         {
-            if (command == null) return;
+            player.Name = name;
 
-            if (command.Action == "TEST_SERIALIZATION")
+            //send list of existing room
+            if (_rooms.Count != 0)
             {
-                Logger.Log($"Received test data: {command.Data}");
-            }
-            switch (command.Action)
-            {
-                case "TEST_SERIALIZATION":
-                    Logger.Log($"Server Received: {command.Data}");
-                    // Echo back to client
-                    SendToPlayer(player, new GameCommand
-                    {
-                        Action = "TEST_RESPONSE",
-                        Data = $"Echo: {command.Data}"
-                    });
-                    break;
-
-                case "CREATE_ROOM":
-                    if (!string.IsNullOrEmpty(command.Data))
-                        CreateRoom(player, command.Data);
-                    break;
-                    // Add other commands
-            }
-        }
-
-        private void CreateRoom(Player player, string category)
-        {
-            lock (_lock)
-            {
-                var room = new Room
+                List<object> existingRooms = new();
+                foreach (Room room in _rooms)
                 {
-                    Category = category,
-                    Player1 = player,
-                    SecretWord = GameLogic.GetRandomWord(category)
-                };
-                _rooms.Add(room);
+                    var roomData = new
+                    {
+                        Player1 = room.Players[0].Name,
+                        Player2 = room.Players[1]?.Name,
+                        Category = room.Category
+                    };
+                    existingRooms.Add(roomData);
+                }
+                var roomsData = JsonConvert.SerializeObject(existingRooms);
+                SendToPlayer(player, new GameCommand
+                {
+                    Action = "EXISTING_ROOMS",
+                    Data = roomsData
+                });
             }
         }
+
+
+        public void CreateRoom(Player player, string category)
+        {
+            var room = new Room(player, category);
+            _rooms.Add(room);
+        }
+        public void JoinRoom(Player player, int index)
+        {
+            _rooms[index].Join(player);
+        }
+        public void Watch(Player watcher, int index)
+        {
+            _rooms[index].Watch(watcher);
+        }
+
     }
 }

@@ -99,5 +99,10 @@ namespace GuessTheNameClient.UI
                               MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
