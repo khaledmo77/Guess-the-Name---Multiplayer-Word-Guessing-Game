@@ -22,7 +22,5 @@ namespace Shared.ProtocolModels
         [JsonProperty("currentPlayer")]
         public string CurrentPlayer { get; set; } = null!;
 
-        [JsonProperty("state")]
-        public string State { get; set; } = null!;
     }
 }

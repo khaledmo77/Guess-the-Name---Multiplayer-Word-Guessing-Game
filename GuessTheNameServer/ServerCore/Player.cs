@@ -6,7 +6,6 @@ using System.Collections.Specialized;
 using System.Threading.Tasks.Dataflow;
 using Newtonsoft.Json;
 
-
 namespace GuessTheNameServer.ServerCore
 {
     public class Player : IDisposable

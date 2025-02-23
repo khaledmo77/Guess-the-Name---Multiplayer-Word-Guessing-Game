@@ -42,7 +42,6 @@ namespace GuessTheNameServer.Networking
                     if (string.IsNullOrEmpty(message)) continue;
 
                     var command = JsonConvert.DeserializeObject<GameCommand>(message);
-                    if (command == null) continue;
 
                     switch (command.Action)
                     {
