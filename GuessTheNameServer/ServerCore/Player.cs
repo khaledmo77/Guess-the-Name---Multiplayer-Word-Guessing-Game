@@ -6,7 +6,6 @@ using System.Collections.Specialized;
 using System.Threading.Tasks.Dataflow;
 using Newtonsoft.Json;
 
-
 namespace GuessTheNameServer.ServerCore
 {
     public class Player : IDisposable
@@ -16,14 +15,17 @@ namespace GuessTheNameServer.ServerCore
         public string Name { get; set; } = null!;
         public StreamWriter Writer { get; }
         public StreamReader Reader { get; }
+        public string state { get; set; }
+        public int RoomIndex { get; set; }
+
         private bool _disposed = false;
-        //bool inGame = false;  
 
         public Player(TcpClient client)
         {
             Client = client;
             Writer = new StreamWriter(client.GetStream());
             Reader = new StreamReader(client.GetStream());
+            Writer.AutoFlush = true;
         }
         public void SendGuess(string letter)
         {
@@ -33,7 +35,22 @@ namespace GuessTheNameServer.ServerCore
             }
         }
 
-        
+        public bool ListenToJoinRequest()
+        {
+            var message = Reader.ReadLine();
+            if (string.IsNullOrEmpty(message))
+                return false;
+            var ressponse = JsonConvert.DeserializeObject<GameCommand>(message);
+            if (ressponse?.Action == "ACCEPT")
+            {
+                state = "Playing";
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public void Dispose()
         {
             Dispose(true);
