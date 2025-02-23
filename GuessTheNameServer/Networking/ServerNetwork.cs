@@ -44,7 +44,7 @@ namespace GuessTheNameServer.Networking
                     var command = JsonConvert.DeserializeObject<GameCommand>(message);
                     if (command == null) continue;
 
-                    
+
                     switch (command.Action)
                     {
                         case "LOGIN":
@@ -55,11 +55,16 @@ namespace GuessTheNameServer.Networking
                             if (!string.IsNullOrEmpty(command.Data))
                             {
                                 _roomManager.CreateRoom(player, command.Data);
+
+                                while (player.state == "Waiting other player") ;
+
                             }
                             break;
                         case "JOIN_ROOM":
                             if (!string.IsNullOrEmpty(command.Data))
-                            {
+                            {<<<<<<< develop
+                                int index = Convert.ToInt32(command.Data);
+                                _roomManager.JoinRoom(player, index);
 
                             }
                             break;
@@ -72,10 +77,25 @@ namespace GuessTheNameServer.Networking
                             break;
                         case "WATCH":
                             if (!string.IsNullOrEmpty(command.Data))
+
                             {
                                 int index = Convert.ToInt32(command.Data);
                                 _roomManager.Watch(player, index);
-                                player.SendGuess(command.Data);
+                            }
+                            break;
+                        case "PLAY_AGAIN":
+                            if (!string.IsNullOrEmpty(command.Data))
+                            {
+                                int index = player.RoomIndex;
+                                _roomManager.NewGame(index);
+                            }
+                            break;
+                        case "END_GAME":
+                            if (!string.IsNullOrEmpty(command.Data))
+                            {
+                                int index = player.RoomIndex;
+                                _roomManager.NewGame(index);
+
                             }
                             break;
 
