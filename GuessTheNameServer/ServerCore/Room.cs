@@ -12,12 +12,15 @@ namespace GuessTheNameServer.ServerCore
         public string Category { get; set; } = null!;
         public Player[] Players { get; set; } = new Player[2];
         public StringBuilder SecretWord { get; set; }
+
         public List<char> GuessedLetters { get; set; } = new();
+
         public bool IsGameActive { get; set; }
         public Player? CurrentPlayer { get; set; }
         public int CurrentPlayerIndex { get; set; }
 
         public int NumberOfPlayers = 0;
+
 
         public List<Player> Watchers { get; set; } = new();
         public Room(Player player, string category)
@@ -29,6 +32,7 @@ namespace GuessTheNameServer.ServerCore
             player.Guess += CheckTheGuessing;
             CurrentPlayer = Players[0];
             NumberOfPlayers++;
+
             string command = PrepareCommand();
             SendDataToOne(player, command);
         }
@@ -40,6 +44,7 @@ namespace GuessTheNameServer.ServerCore
             return Players[0].ListenToJoinRequest();
         }
         public string PrepareCommand()
+
         {
             var gameData = new
             {
@@ -59,6 +64,7 @@ namespace GuessTheNameServer.ServerCore
         }
         public void SendDataToAll(string command)
         {
+
             foreach (var player in Players)
             {
                 player?.Writer.WriteLine(JsonConvert.SerializeObject(command));
@@ -70,6 +76,7 @@ namespace GuessTheNameServer.ServerCore
         }
         public void SendDataToOne(Player player, string command)
         {
+
             player.Writer.WriteLine(JsonConvert.SerializeObject(command));
         }
 
@@ -81,17 +88,20 @@ namespace GuessTheNameServer.ServerCore
             player.Guess += CheckTheGuessing;
             string command = PrepareCommand();
             SendDataToAll(command);
+
         }
         public void Watch(Player watcher)
         {
             Watchers.Add(watcher);
             string command = PrepareCommand();
             SendDataToOne(watcher, command);
+
         }
 
         public void CheckTheGuessing(string letter)
         {
             int index = GameLogic.CheckLetter(SecretWord, char.ToUpper(letter[0]));
+
 
             if (index >= 0)
             {
@@ -103,6 +113,7 @@ namespace GuessTheNameServer.ServerCore
                 CurrentPlayer = Players[CurrentPlayerIndex];
             }
             GameState state = new() { RevealedLetters = GuessedLetters, CurrentPlayer = this.CurrentPlayer.Name };
+
             foreach (var player in Players)
             {
                 player?.Writer.WriteLine(JsonConvert.SerializeObject(state));
@@ -135,5 +146,6 @@ namespace GuessTheNameServer.ServerCore
             string command = PrepareCommand();
             SendDataToAll(command);
         }
+
     }
 }

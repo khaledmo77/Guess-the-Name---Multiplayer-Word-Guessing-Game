@@ -42,6 +42,8 @@ namespace GuessTheNameServer.Networking
                     if (string.IsNullOrEmpty(message)) continue;
 
                     var command = JsonConvert.DeserializeObject<GameCommand>(message);
+                    if (command == null) continue;
+
 
                     switch (command.Action)
                     {
@@ -53,14 +55,17 @@ namespace GuessTheNameServer.Networking
                             if (!string.IsNullOrEmpty(command.Data))
                             {
                                 _roomManager.CreateRoom(player, command.Data);
+
                                 while (player.state == "Waiting other player") ;
+
                             }
                             break;
                         case "JOIN_ROOM":
                             if (!string.IsNullOrEmpty(command.Data))
-                            {
+                            {<<<<<<< develop
                                 int index = Convert.ToInt32(command.Data);
                                 _roomManager.JoinRoom(player, index);
+
                             }
                             break;
                         case "GUESS":
@@ -72,6 +77,7 @@ namespace GuessTheNameServer.Networking
                             break;
                         case "WATCH":
                             if (!string.IsNullOrEmpty(command.Data))
+
                             {
                                 int index = Convert.ToInt32(command.Data);
                                 _roomManager.Watch(player, index);
@@ -89,6 +95,7 @@ namespace GuessTheNameServer.Networking
                             {
                                 int index = player.RoomIndex;
                                 _roomManager.NewGame(index);
+
                             }
                             break;
 

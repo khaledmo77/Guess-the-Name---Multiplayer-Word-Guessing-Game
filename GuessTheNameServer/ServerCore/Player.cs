@@ -6,6 +6,7 @@ using System.Collections.Specialized;
 using System.Threading.Tasks.Dataflow;
 using Newtonsoft.Json;
 
+
 namespace GuessTheNameServer.ServerCore
 {
     public class Player : IDisposable
@@ -34,6 +35,14 @@ namespace GuessTheNameServer.ServerCore
                 Guess(letter);
             }
         }
+        public void SendGuess(string letter)
+        {
+            if (Guess != null)
+            {
+                Guess(letter);
+            }
+        }
+
 
         public bool ListenToJoinRequest()
         {
@@ -51,6 +60,7 @@ namespace GuessTheNameServer.ServerCore
                 return false;
             }
         }
+
         public void Dispose()
         {
             Dispose(true);

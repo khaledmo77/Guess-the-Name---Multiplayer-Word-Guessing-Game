@@ -38,6 +38,7 @@ namespace GuessTheNameServer.ServerCore
 
 
         // In GuessTheNameServer/ServerCore/RoomManager.cs
+
         public void Login(Player player, string name)
         {
             player.Name = name;
@@ -62,6 +63,7 @@ namespace GuessTheNameServer.ServerCore
                     Category = room.Category
                 };
                 existingRooms.Add(roomData);
+
             }
             var roomsData = JsonConvert.SerializeObject(existingRooms);
             var command = new GameCommand
@@ -71,6 +73,7 @@ namespace GuessTheNameServer.ServerCore
             };
             return command;
         }
+
         public void CreateRoom(Player player, string category)
         {
             var room = new Room(player, category);
@@ -126,6 +129,7 @@ namespace GuessTheNameServer.ServerCore
             {
                 _rooms[index].SendDataToOne(player, command);
             }
+
         }
 
     }
