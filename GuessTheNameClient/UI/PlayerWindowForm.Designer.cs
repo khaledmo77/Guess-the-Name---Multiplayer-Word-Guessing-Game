@@ -29,6 +29,16 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label1 = new Label();
+            panel2 = new Panel();
+            Player2Score = new Label();
+            Player1Score = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            PlayerName = new Label();
+            SelectedWord = new Label();
+            label5 = new Label();
             buttonX = new Button();
             buttonC = new Button();
             buttonV = new Button();
@@ -55,16 +65,6 @@
             buttonR = new Button();
             buttonW = new Button();
             buttonQ = new Button();
-            label1 = new Label();
-            panel2 = new Panel();
-            Player2Score = new Label();
-            Player1Score = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            PlayerName = new Label();
-            SelectedWord = new Label();
-            label5 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -101,240 +101,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(558, 149);
             panel1.TabIndex = 0;
-            // 
-            // buttonX
-            // 
-            buttonX.Location = new Point(188, 102);
-            buttonX.Name = "buttonX";
-            buttonX.Size = new Size(30, 29);
-            buttonX.TabIndex = 27;
-            buttonX.Text = "X";
-            buttonX.UseVisualStyleBackColor = true;
-            // 
-            // buttonC
-            // 
-            buttonC.Location = new Point(224, 102);
-            buttonC.Name = "buttonC";
-            buttonC.Size = new Size(30, 29);
-            buttonC.TabIndex = 26;
-            buttonC.Text = "C";
-            buttonC.UseVisualStyleBackColor = true;
-            // 
-            // buttonV
-            // 
-            buttonV.Location = new Point(260, 102);
-            buttonV.Name = "buttonV";
-            buttonV.Size = new Size(30, 29);
-            buttonV.TabIndex = 25;
-            buttonV.Text = "V";
-            buttonV.UseVisualStyleBackColor = true;
-            // 
-            // buttonB
-            // 
-            buttonB.Location = new Point(296, 102);
-            buttonB.Name = "buttonB";
-            buttonB.Size = new Size(30, 29);
-            buttonB.TabIndex = 24;
-            buttonB.Text = "B";
-            buttonB.UseVisualStyleBackColor = true;
-            // 
-            // buttonN
-            // 
-            buttonN.Location = new Point(332, 102);
-            buttonN.Name = "buttonN";
-            buttonN.Size = new Size(30, 29);
-            buttonN.TabIndex = 23;
-            buttonN.Text = "N";
-            buttonN.UseVisualStyleBackColor = true;
-            // 
-            // buttonM
-            // 
-            buttonM.Location = new Point(368, 102);
-            buttonM.Name = "buttonM";
-            buttonM.Size = new Size(30, 29);
-            buttonM.TabIndex = 22;
-            buttonM.Text = "M";
-            buttonM.UseVisualStyleBackColor = true;
-            // 
-            // buttonO
-            // 
-            buttonO.Location = new Point(388, 32);
-            buttonO.Name = "buttonO";
-            buttonO.Size = new Size(30, 29);
-            buttonO.TabIndex = 20;
-            buttonO.Text = "O";
-            buttonO.UseVisualStyleBackColor = true;
-            // 
-            // buttonP
-            // 
-            buttonP.Location = new Point(424, 32);
-            buttonP.Name = "buttonP";
-            buttonP.Size = new Size(30, 29);
-            buttonP.TabIndex = 19;
-            buttonP.Text = "P";
-            buttonP.UseVisualStyleBackColor = true;
-            // 
-            // buttonA
-            // 
-            buttonA.Location = new Point(116, 67);
-            buttonA.Name = "buttonA";
-            buttonA.Size = new Size(30, 29);
-            buttonA.TabIndex = 18;
-            buttonA.Text = "A";
-            buttonA.UseVisualStyleBackColor = true;
-            // 
-            // buttonZ
-            // 
-            buttonZ.Location = new Point(152, 102);
-            buttonZ.Name = "buttonZ";
-            buttonZ.Size = new Size(30, 29);
-            buttonZ.TabIndex = 17;
-            buttonZ.Text = "Z";
-            buttonZ.UseVisualStyleBackColor = true;
-            // 
-            // buttonK
-            // 
-            buttonK.Location = new Point(368, 67);
-            buttonK.Name = "buttonK";
-            buttonK.Size = new Size(30, 29);
-            buttonK.TabIndex = 16;
-            buttonK.Text = "K";
-            buttonK.UseVisualStyleBackColor = true;
-            // 
-            // buttonJ
-            // 
-            buttonJ.Location = new Point(332, 67);
-            buttonJ.Name = "buttonJ";
-            buttonJ.Size = new Size(30, 29);
-            buttonJ.TabIndex = 15;
-            buttonJ.Text = "J";
-            buttonJ.UseVisualStyleBackColor = true;
-            // 
-            // buttonL
-            // 
-            buttonL.Location = new Point(404, 67);
-            buttonL.Name = "buttonL";
-            buttonL.Size = new Size(30, 29);
-            buttonL.TabIndex = 14;
-            buttonL.Text = "L";
-            buttonL.UseVisualStyleBackColor = true;
-            // 
-            // buttonG
-            // 
-            buttonG.Location = new Point(260, 67);
-            buttonG.Name = "buttonG";
-            buttonG.Size = new Size(30, 29);
-            buttonG.TabIndex = 13;
-            buttonG.Text = "G";
-            buttonG.UseVisualStyleBackColor = true;
-            // 
-            // buttonD
-            // 
-            buttonD.Location = new Point(188, 67);
-            buttonD.Name = "buttonD";
-            buttonD.Size = new Size(30, 29);
-            buttonD.TabIndex = 12;
-            buttonD.Text = "D";
-            buttonD.UseVisualStyleBackColor = true;
-            // 
-            // buttonF
-            // 
-            buttonF.Location = new Point(224, 67);
-            buttonF.Name = "buttonF";
-            buttonF.Size = new Size(30, 29);
-            buttonF.TabIndex = 11;
-            buttonF.Text = "F";
-            buttonF.UseVisualStyleBackColor = true;
-            // 
-            // buttonS
-            // 
-            buttonS.Location = new Point(152, 67);
-            buttonS.Name = "buttonS";
-            buttonS.Size = new Size(30, 29);
-            buttonS.TabIndex = 10;
-            buttonS.Text = "S";
-            buttonS.UseVisualStyleBackColor = true;
-            // 
-            // buttonH
-            // 
-            buttonH.Location = new Point(296, 67);
-            buttonH.Name = "buttonH";
-            buttonH.Size = new Size(30, 29);
-            buttonH.TabIndex = 9;
-            buttonH.Text = "H";
-            buttonH.UseVisualStyleBackColor = true;
-            // 
-            // buttonU
-            // 
-            buttonU.Location = new Point(316, 32);
-            buttonU.Name = "buttonU";
-            buttonU.Size = new Size(30, 29);
-            buttonU.TabIndex = 8;
-            buttonU.Text = "U";
-            buttonU.UseVisualStyleBackColor = true;
-            // 
-            // buttonI
-            // 
-            buttonI.Location = new Point(352, 32);
-            buttonI.Name = "buttonI";
-            buttonI.Size = new Size(30, 29);
-            buttonI.TabIndex = 7;
-            buttonI.Text = "I";
-            buttonI.UseVisualStyleBackColor = true;
-            // 
-            // buttonY
-            // 
-            buttonY.Location = new Point(280, 32);
-            buttonY.Name = "buttonY";
-            buttonY.Size = new Size(30, 29);
-            buttonY.TabIndex = 6;
-            buttonY.Text = "Y";
-            buttonY.UseVisualStyleBackColor = true;
-            // 
-            // buttonT
-            // 
-            buttonT.Location = new Point(244, 32);
-            buttonT.Name = "buttonT";
-            buttonT.Size = new Size(30, 29);
-            buttonT.TabIndex = 5;
-            buttonT.Text = "T";
-            buttonT.UseVisualStyleBackColor = true;
-            // 
-            // buttonE
-            // 
-            buttonE.Location = new Point(172, 32);
-            buttonE.Name = "buttonE";
-            buttonE.Size = new Size(30, 29);
-            buttonE.TabIndex = 4;
-            buttonE.Text = "E";
-            buttonE.UseVisualStyleBackColor = true;
-            // 
-            // buttonR
-            // 
-            buttonR.Location = new Point(208, 32);
-            buttonR.Name = "buttonR";
-            buttonR.Size = new Size(30, 29);
-            buttonR.TabIndex = 3;
-            buttonR.Text = "R";
-            buttonR.UseVisualStyleBackColor = true;
-            // 
-            // buttonW
-            // 
-            buttonW.Location = new Point(136, 32);
-            buttonW.Name = "buttonW";
-            buttonW.Size = new Size(30, 29);
-            buttonW.TabIndex = 2;
-            buttonW.Text = "W";
-            buttonW.UseVisualStyleBackColor = true;
-            // 
-            // buttonQ
-            // 
-            buttonQ.Location = new Point(100, 32);
-            buttonQ.Name = "buttonQ";
-            buttonQ.Size = new Size(30, 29);
-            buttonQ.TabIndex = 1;
-            buttonQ.Text = "Q";
-            buttonQ.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -430,11 +196,245 @@
             label5.TabIndex = 5;
             label5.Text = "Player Turn";
             // 
+            // buttonX
+            // 
+            buttonX.Location = new Point(190, 95);
+            buttonX.Name = "buttonX";
+            buttonX.Size = new Size(30, 29);
+            buttonX.TabIndex = 53;
+            buttonX.Text = "X";
+            buttonX.UseVisualStyleBackColor = true;
+            // 
+            // buttonC
+            // 
+            buttonC.Location = new Point(226, 95);
+            buttonC.Name = "buttonC";
+            buttonC.Size = new Size(30, 29);
+            buttonC.TabIndex = 52;
+            buttonC.Text = "C";
+            buttonC.UseVisualStyleBackColor = true;
+            // 
+            // buttonV
+            // 
+            buttonV.Location = new Point(262, 95);
+            buttonV.Name = "buttonV";
+            buttonV.Size = new Size(30, 29);
+            buttonV.TabIndex = 51;
+            buttonV.Text = "V";
+            buttonV.UseVisualStyleBackColor = true;
+            // 
+            // buttonB
+            // 
+            buttonB.Location = new Point(298, 95);
+            buttonB.Name = "buttonB";
+            buttonB.Size = new Size(30, 29);
+            buttonB.TabIndex = 50;
+            buttonB.Text = "B";
+            buttonB.UseVisualStyleBackColor = true;
+            // 
+            // buttonN
+            // 
+            buttonN.Location = new Point(334, 95);
+            buttonN.Name = "buttonN";
+            buttonN.Size = new Size(30, 29);
+            buttonN.TabIndex = 49;
+            buttonN.Text = "N";
+            buttonN.UseVisualStyleBackColor = true;
+            // 
+            // buttonM
+            // 
+            buttonM.Location = new Point(370, 95);
+            buttonM.Name = "buttonM";
+            buttonM.Size = new Size(30, 29);
+            buttonM.TabIndex = 48;
+            buttonM.Text = "M";
+            buttonM.UseVisualStyleBackColor = true;
+            // 
+            // buttonO
+            // 
+            buttonO.Location = new Point(390, 25);
+            buttonO.Name = "buttonO";
+            buttonO.Size = new Size(30, 29);
+            buttonO.TabIndex = 47;
+            buttonO.Text = "O";
+            buttonO.UseVisualStyleBackColor = true;
+            // 
+            // buttonP
+            // 
+            buttonP.Location = new Point(426, 25);
+            buttonP.Name = "buttonP";
+            buttonP.Size = new Size(30, 29);
+            buttonP.TabIndex = 46;
+            buttonP.Text = "P";
+            buttonP.UseVisualStyleBackColor = true;
+            // 
+            // buttonA
+            // 
+            buttonA.Location = new Point(118, 60);
+            buttonA.Name = "buttonA";
+            buttonA.Size = new Size(30, 29);
+            buttonA.TabIndex = 45;
+            buttonA.Text = "A";
+            buttonA.UseVisualStyleBackColor = true;
+            // 
+            // buttonZ
+            // 
+            buttonZ.Location = new Point(154, 95);
+            buttonZ.Name = "buttonZ";
+            buttonZ.Size = new Size(30, 29);
+            buttonZ.TabIndex = 44;
+            buttonZ.Text = "Z";
+            buttonZ.UseVisualStyleBackColor = true;
+            // 
+            // buttonK
+            // 
+            buttonK.Location = new Point(370, 60);
+            buttonK.Name = "buttonK";
+            buttonK.Size = new Size(30, 29);
+            buttonK.TabIndex = 43;
+            buttonK.Text = "K";
+            buttonK.UseVisualStyleBackColor = true;
+            // 
+            // buttonJ
+            // 
+            buttonJ.Location = new Point(334, 60);
+            buttonJ.Name = "buttonJ";
+            buttonJ.Size = new Size(30, 29);
+            buttonJ.TabIndex = 42;
+            buttonJ.Text = "J";
+            buttonJ.UseVisualStyleBackColor = true;
+            // 
+            // buttonL
+            // 
+            buttonL.Location = new Point(406, 60);
+            buttonL.Name = "buttonL";
+            buttonL.Size = new Size(30, 29);
+            buttonL.TabIndex = 41;
+            buttonL.Text = "L";
+            buttonL.UseVisualStyleBackColor = true;
+            // 
+            // buttonG
+            // 
+            buttonG.Location = new Point(262, 60);
+            buttonG.Name = "buttonG";
+            buttonG.Size = new Size(30, 29);
+            buttonG.TabIndex = 40;
+            buttonG.Text = "G";
+            buttonG.UseVisualStyleBackColor = true;
+            // 
+            // buttonD
+            // 
+            buttonD.Location = new Point(190, 60);
+            buttonD.Name = "buttonD";
+            buttonD.Size = new Size(30, 29);
+            buttonD.TabIndex = 39;
+            buttonD.Text = "D";
+            buttonD.UseVisualStyleBackColor = true;
+            // 
+            // buttonF
+            // 
+            buttonF.Location = new Point(226, 60);
+            buttonF.Name = "buttonF";
+            buttonF.Size = new Size(30, 29);
+            buttonF.TabIndex = 38;
+            buttonF.Text = "F";
+            buttonF.UseVisualStyleBackColor = true;
+            // 
+            // buttonS
+            // 
+            buttonS.Location = new Point(154, 60);
+            buttonS.Name = "buttonS";
+            buttonS.Size = new Size(30, 29);
+            buttonS.TabIndex = 37;
+            buttonS.Text = "S";
+            buttonS.UseVisualStyleBackColor = true;
+            // 
+            // buttonH
+            // 
+            buttonH.Location = new Point(298, 60);
+            buttonH.Name = "buttonH";
+            buttonH.Size = new Size(30, 29);
+            buttonH.TabIndex = 36;
+            buttonH.Text = "H";
+            buttonH.UseVisualStyleBackColor = true;
+            // 
+            // buttonU
+            // 
+            buttonU.Location = new Point(318, 25);
+            buttonU.Name = "buttonU";
+            buttonU.Size = new Size(30, 29);
+            buttonU.TabIndex = 35;
+            buttonU.Text = "U";
+            buttonU.UseVisualStyleBackColor = true;
+            // 
+            // buttonI
+            // 
+            buttonI.Location = new Point(354, 25);
+            buttonI.Name = "buttonI";
+            buttonI.Size = new Size(30, 29);
+            buttonI.TabIndex = 34;
+            buttonI.Text = "I";
+            buttonI.UseVisualStyleBackColor = true;
+            // 
+            // buttonY
+            // 
+            buttonY.Location = new Point(282, 25);
+            buttonY.Name = "buttonY";
+            buttonY.Size = new Size(30, 29);
+            buttonY.TabIndex = 33;
+            buttonY.Text = "Y";
+            buttonY.UseVisualStyleBackColor = true;
+            // 
+            // buttonT
+            // 
+            buttonT.Location = new Point(246, 25);
+            buttonT.Name = "buttonT";
+            buttonT.Size = new Size(30, 29);
+            buttonT.TabIndex = 32;
+            buttonT.Text = "T";
+            buttonT.UseVisualStyleBackColor = true;
+            // 
+            // buttonE
+            // 
+            buttonE.Location = new Point(174, 25);
+            buttonE.Name = "buttonE";
+            buttonE.Size = new Size(30, 29);
+            buttonE.TabIndex = 31;
+            buttonE.Text = "E";
+            buttonE.UseVisualStyleBackColor = true;
+            // 
+            // buttonR
+            // 
+            buttonR.Location = new Point(210, 25);
+            buttonR.Name = "buttonR";
+            buttonR.Size = new Size(30, 29);
+            buttonR.TabIndex = 30;
+            buttonR.Text = "R";
+            buttonR.UseVisualStyleBackColor = true;
+            // 
+            // buttonW
+            // 
+            buttonW.Location = new Point(138, 25);
+            buttonW.Name = "buttonW";
+            buttonW.Size = new Size(30, 29);
+            buttonW.TabIndex = 29;
+            buttonW.Text = "W";
+            buttonW.UseVisualStyleBackColor = true;
+            // 
+            // buttonQ
+            // 
+            buttonQ.Location = new Point(102, 25);
+            buttonQ.Name = "buttonQ";
+            buttonQ.Size = new Size(30, 29);
+            buttonQ.TabIndex = 28;
+            buttonQ.Text = "Q";
+            buttonQ.UseVisualStyleBackColor = true;
+            // 
             // PlayerWindowForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(925, 481);
             Controls.Add(label5);
             Controls.Add(SelectedWord);
             Controls.Add(PlayerName);
@@ -455,6 +455,15 @@
 
         private Panel panel1;
         private Label label1;
+        private Panel panel2;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Label Player2Score;
+        private Label Player1Score;
+        private Label PlayerName;
+        private Label SelectedWord;
+        private Label label5;
         private Button buttonX;
         private Button buttonC;
         private Button buttonV;
@@ -481,14 +490,5 @@
         private Button buttonR;
         private Button buttonW;
         private Button buttonQ;
-        private Panel panel2;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private Label Player2Score;
-        private Label Player1Score;
-        private Label PlayerName;
-        private Label SelectedWord;
-        private Label label5;
     }
 }
